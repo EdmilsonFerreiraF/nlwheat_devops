@@ -17,6 +17,11 @@ config :nlw_heat_devops, NlwHeatDevopsWeb.Endpoint,
   pubsub_server: NlwHeatDevops.PubSub,
   live_view: [signing_salt: "s5zUt7CS"]
 
+  config :nlw_heat_devops, NlwHeatDevops.Scheduler,
+  jobs: [
+    # Every minute
+    {"0 0 * * *", {NlwHeatDevops.Tags.Count, :call, []}},
+  ]
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails

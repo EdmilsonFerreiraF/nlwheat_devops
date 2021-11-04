@@ -15,7 +15,8 @@ defmodule NlwHeatDevops.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: NlwHeatDevops.PubSub},
       # Start the Endpoint (http/https)
-      NlwHeatDevopsWeb.Endpoint
+      NlwHeatDevopsWeb.Endpoint,
+      NlwHeatDevops.Scheduler
       # Start a worker by calling: NlwHeatDevops.Worker.start_link(arg)
       # {NlwHeatDevops.Worker, arg}
     ]
